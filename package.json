@@ -1,7 +1,7 @@
 {
   "name": "idvstel-wallet",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "IDVSTEL Wallet Stellar",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
   "_moduleAliases": {
@@ -48,5 +48,15 @@
     "rollup-plugin-node-polyfills": "^0.2.1",
     "stellar-sdk": "^8.3.0"
   },
-  "license": "MIT"
+  "author": "BitsanID",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bitsanid/idvstel-wallet.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Bitsanid/idvstel-wallet/issues"
+  },
+  "homepage": "https://github.com/Bitsanid/idvstel-wallet#readme"
 }
