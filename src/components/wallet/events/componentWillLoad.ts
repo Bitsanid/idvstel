@@ -1,3 +1,4 @@
+import { Server, StellarTomlResolver } from "stellar-sdk";
 import { handleError } from "@services/error";
 import { get } from "@services/storage";
 
@@ -6,6 +7,9 @@ export default async function componentWillLoad() {
     let keystore = await get("keyStore");
 
     this.error = null;
+    this.server = new Server("https://horizon-testnet.stellar.org");
+    this.homeDomain = "stellar-anchor-server.herokuapp.com";
+    this.toml = await StellarTomlResolver.resolve(this.homeDomain);
 
     if (keystore) {
       keystore = atob(keystore);
@@ -16,6 +20,8 @@ export default async function componentWillLoad() {
         publicKey,
         keystore,
       };
+
+      this.updateAccount();
     }
   } catch (err) {
     this.error = handleError(err);
